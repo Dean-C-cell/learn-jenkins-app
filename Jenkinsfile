@@ -34,6 +34,8 @@ pipeline {
             steps {
                 sh '''
                     npx playwright test
+                    echo "=== test-results ==="
+                    find test-results -type f -maxdepth 2 -print
                 '''
             }
         }
